@@ -1,14 +1,14 @@
-# Knuddels Protobuf Register
+# ![Knuddel](https://knuddels-wiki.de/images/8/89/Classic-Basic.gif) Knuddels Protobuf Register
 Handling automated registration on Knuddels.de with protobuf. More informations on https://u-labs.de/forum/protokoll-120/registrierung-39966/
 
 ### Working state / ToDo
-- [x] Encoding
-- [ ] Decoding
-- [ ] API calls to server (Knuddels)
-- [ ] autmatism for mass registration
-- [ ] Proxy usage
+- [x] :unlock: Encoding
+- [ ] :closed_lock_with_key: Decoding
+- [ ] :zap: API calls to server (Knuddels)
+- [ ] :game_die: autmatism for mass registration
+- [ ] :computer: Proxy usage
 
-### Installation
+### :closed_book: Installation
 Clone the repository and install the depencies with `npm`:
 ```sh
 $ npm install
@@ -18,7 +18,7 @@ After the installation, you can run the script with following command:
 $ node main.js
 ```
 
-License
+:page_facing_up: License
 ----
 MIT License
 

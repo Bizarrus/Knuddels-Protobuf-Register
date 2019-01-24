@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+enum RequestType {
+	ALL = 0;
+	NICK = 1;
+	AGE = 2;
+	GENDER = 3;
+	EMAIL = 4;
+	PASSWORD = 5;
+	CAP = 6;
+	FULL_REG_V1 = 7;
+	CHATSERVER = 8;
+}

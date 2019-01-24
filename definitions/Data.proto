@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message Data {
+	required RequestType type = 1;
+	string nickname = 2;
+	int32 age = 3;
+	Gender gender = 4;
+	string email = 5;
+	string cap = 6;
+	string capQuest = 7;
+	string password = 8;
+	int32 category = 9;
+	string platform = 10;
+	repeated string uids = 11;
+	repeated string flags = 12;
+	bool interstitialCandidate = 13;
+	string dsgvoQuestion = 14;
+}

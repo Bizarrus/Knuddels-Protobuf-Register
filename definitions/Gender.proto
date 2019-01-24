@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+enum Gender {
+	UNSPECIFIED = 0;
+	MALE = 1;
+	FEMALE = 2;
+}

@@ -7,8 +7,12 @@ Handling automated registration on Knuddels.de with protobuf. More informations 
 - [ ] :zap: API calls to server (Knuddels)
 - [ ] :game_die: autmatism for mass registration
 - [ ] :computer: Proxy usage
+- [x] Usage by `require` from other `Node.js` destinations
+- [x] Directly usage on `CLI` / `CMD`
+- [x] Usage on `CLI` / `CMD` with some arguments
 
 ### :closed_book: Installation
+##### :floppy_disk: By Source / Repository
 Clone the repository and install the depencies with `npm`:
 ```sh
 $ npm install
@@ -16,6 +20,24 @@ $ npm install
 After the installation, you can run the script with following command:
 ```sh
 $ node main.js
+```
+
+##### :gift: By `npm` with global usage
+```sh
+$ npm install -g knuddels-protobuf-register
+```
+After the installation, you can run the script with following command:
+```sh
+$ knuddels-protobuf-register
+```
+
+##### :scroll: By `npm` with usage on other `Node.js` applications
+```sh
+$ npm install --save knuddels-protobuf-register
+```
+After the installation, you can add the package to your project ([See JavaScript API](docs/JS.md)):
+```js
+const KPR = require('knuddels-protobuf-register');
 ```
 
 :page_facing_up: License

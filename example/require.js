@@ -6,7 +6,6 @@ Encoder.check('nickname', function onSuccess(error, buffer) {
 		throw new Error(error);
 	}
 	
-	
 	console.log('Encoded (Binary)', buffer);
 	console.log('Encoded (Base64)', buffer.toString('base64'));
 	

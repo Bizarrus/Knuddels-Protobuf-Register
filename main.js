@@ -3,10 +3,30 @@ const Config		= require('./package.json');
 const Encoder		= require('./classes/Encoder.js');
 const Decoder		= require('./classes/Decoder.js');
 const inquirer		= require('inquirer');
+const yargs			= require('yargs');
 
 if(require.main !== module) {
 	module.exports.Encoder = Encoder;
 	module.exports.Decoder = Decoder;
+	return;
+}
+
+if(Object.keys(yargs.argv).length > 2) {
+	yargs.command('serve [port]', 'start the server', (yargs) => {
+		yargs.positional('port', {
+			describe: 'port to bind on',
+			default: 5000
+		});
+	}, (argv) => {
+		if(argv.verbose) {
+			console.info(`start server on :${argv.port}`)
+		}
+		
+		serve(argv.port)
+	}).option('verbose', {
+		alias:		'v',
+		default:	false
+	}).argv;
 	return;
 }
 

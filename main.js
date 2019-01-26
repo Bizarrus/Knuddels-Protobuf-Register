@@ -1,7 +1,7 @@
 global.Workspace	= require('path').dirname(__filename);
 const Config		= require('./package.json');
-const Encoder		= require('./Encoder.js');
-const Decoder		= require('./Decoder.js');
+const Encoder		= require('./classes/Encoder.js');
+const Decoder		= require('./classes/Decoder.js');
 const inquirer		= require('inquirer');
 
 if(require.main !== module) {

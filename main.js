@@ -89,15 +89,41 @@ if(Object.keys(yargs.argv).length > 2) {
 				return;
 			}
 			
+			if(!(yargs.argv.age + '').match(/^-{0,1}\d+$/)) {
+				console.log('[Error] --age with the value "' + yargs.argv.age + '" is not a valid number!');
+				return;
+			}
+			
 			if(typeof(yargs.argv.gender) === 'undefined' || yargs.argv.gender.length <= 0) {
 				console.log('[Error] --gender is empty!');
 				return;
 			}
 			
-			if(typeof(yargs.argv.cat) === 'undefined' || yargs.argv.cat.length <= 0) {
-				console.log('[Error] --cat is empty!');
+			if(Encoder.getEnum({
+				UNSPECIFIED:	0,
+				MALE:			1,
+				FEMALE:			2
+			}, yargs.argv.gender) === null) {
+				console.log('[Error] --gender has a bad value (' + yargs.argv.gender + ')!');
 				return;
 			}
+			
+			if(typeof(yargs.argv.cat) === 'undefined' || yargs.argv.cat.length <= 0) {
+				yargs.argv.cat = 7;
+			} else {
+				if(!(yargs.argv.cat + '').match(/^-{0,1}\d+$/)) {
+					console.log('[Error] --cat with the value "' + yargs.argv.cat + '" is not a valid number!');
+					return;
+				}
+			}
+			
+			Encoder.submit(yargs.argv.nick, yargs.argv.pass, yargs.argv.gender, parseInt(yargs.argv.age, 10), parseInt(yargs.argv.cat, 10), function onSuccess(error, buffer) {
+				if(error) {
+					throw new Error(error);
+				}
+				
+				console.log(buffer);
+			});
 		break;
 		default:
 			console.log('[Error] Unknown --type with value "' + yargs.argv.type.toUpperCase() + '". Specify --help for available options');

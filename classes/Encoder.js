@@ -27,8 +27,25 @@ module.exports = (new function Encoder() {
 	};
 	
 	this.getEnum = function getEnum(enums, value) {
-		if(typeof(value) === 'number') {
-			return value;
+		if(typeof(value) === 'number' || !isNaN(parseInt(value, 10))) {
+			if(typeof(value) === 'string') {
+				value = parseInt(value, 10);
+			}
+			
+			let number = null;
+			
+			Object.keys(enums).forEach(function(key) {
+				if(number !== null) {
+					return;
+				}
+				
+				if(enums[key] === value) {
+					number = enums[key];
+					return;
+				}
+			});
+			
+			return number;
 		}
 		
 		let found = null;
@@ -38,7 +55,7 @@ module.exports = (new function Encoder() {
 				return;
 			}
 			
-			if(key.toUpperCase() === value.toUpperCase()) {
+			if(key.toUpperCase() === value.toUpperCase() || key.toUpperCase().substr(0, 1) === value.toUpperCase()) {
 				found = enums[key];
 			}
 		});

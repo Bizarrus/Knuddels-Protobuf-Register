@@ -51,10 +51,14 @@ inquirer.prompt([{
 				name:		'age',
 				message:	'Age:',
 				validate: function validate(value) {
-					if(value.match(/[0-9]/i)) {
+					if((value + '').match(/^-{0,1}\d+$/)) {
 						return true;
 					}
-
+					
+					if(!isNaN(value)) {
+						return 'Please enter a valid number!';
+					}
+					
 					return 'Please enter a valid age!';
 				}
 			}, {
@@ -73,8 +77,12 @@ inquirer.prompt([{
 					return 7;
 				},
 				validate: function validate(value) {
-					if((value + '').match(/[0-9]/i)) {
+					if((value + '').match(/^-{0,1}\d+$/)) {
 						return true;
+					}
+					
+					if(!isNaN(value)) {
+						return 'Please enter a valid number!';
 					}
 
 					return 'Please enter a valid number!';

@@ -47,7 +47,7 @@ module.exports = (new function Encoder() {
 	};
 	
 	this.load = function load(payload, callback) {
-		protobuf.load('./definitions/Register.proto', function(error, root) {
+		protobuf.load(Workspace + '/definitions/Register.proto', function(error, root) {
 			if(error) {
 				callback(error, null);
 				return;

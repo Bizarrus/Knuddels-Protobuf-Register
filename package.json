@@ -1,14 +1,16 @@
 {
-  "name":			"knuddels-protobuf-register",
-  "version":		"1.0.0",
-  "description":	"Handling automated registration on Knuddels.de with protobuf",
-  "main":			"main.js",
-  "author":			"Bizzi",
-  "license":		"MIT",
+  "name": "knuddels-protobuf-register",
+  "version": "1.0.0",
+  "description": "Handling automated registration on Knuddels.de with protobuf",
+  "main": "main.js",
+  "author": "Bizzi",
+  "license": "MIT",
   "devDependencies": {
     "google-protobuf": "^3.6.1"
   },
   "dependencies": {
+    "command-line-usage": "^5.0.5",
+    "inquirer": "^6.2.1",
     "protobufjs": "^6.8.8"
   }
 }

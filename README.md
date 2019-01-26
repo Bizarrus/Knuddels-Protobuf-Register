@@ -3,7 +3,7 @@ Handling automated registration on Knuddels.de with protobuf. More informations 
 
 ### Working state / ToDo
 - [x] :unlock: Encoding
-- [ ] :closed_lock_with_key: Decoding
+- [x] :closed_lock_with_key: Decoding
 - [ ] :zap: API calls to server (Knuddels)
 - [ ] :game_die: autmatism for mass registration
 - [ ] :computer: Proxy usage
